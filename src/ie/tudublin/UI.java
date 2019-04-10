@@ -31,6 +31,10 @@ public class UI extends PApplet{
 		float m = map(50, 0, width, 0, height);
 		for (int i = 0; i < resistors.size(); i++) {
 			rect(100, 100 + (m*i), 150, 50);
+			for (int j = 0; j < 3; j++) {
+				//fill(1, 2, 3);
+				rect(100 + (10*j), 100+(m*i), 5, 50);
+			}
 		}
 	}
 
