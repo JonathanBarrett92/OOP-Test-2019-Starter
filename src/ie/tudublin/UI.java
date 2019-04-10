@@ -1,6 +1,5 @@
 package ie.tudublin;
 
-import java.awt.Color;
 import java.util.ArrayList;
 
 import processing.core.PApplet;
@@ -30,9 +29,11 @@ public class UI extends PApplet{
 		background(204);
 		float m = map(50, 0, width, 0, height);
 		for (int i = 0; i < resistors.size(); i++) {
+			fill(250);
 			rect(100, 100 + (m*i), 150, 50);
+			
 			for (int j = 0; j < 3; j++) {
-				//fill(1, 2, 3);
+				fill(color(findColour(i).getR(), findColour(i).getG(), findColour(i).getB()));
 				rect(100 + (10*j), 100+(m*i), 5, 50);
 			}
 		}
@@ -52,11 +53,14 @@ public class UI extends PApplet{
 
 	public void loadResistors(){
 		resistorsTable = loadTable("resistors.csv", "header");
-
 		for (TableRow row : resistorsTable.rows()){
 			int value = Integer.parseInt(row.getString("resistors"));
 			resistors.add(new Resistor(value));
 		}
+	}
+
+	public Colour findColour(int value){
+		return colours.get(value);
 	}
 
 	public void printColors(){
