@@ -26,7 +26,12 @@ public class UI extends PApplet{
 		printResistors();
 	}
 	
-	public void draw(){			
+	public void draw(){		
+		background(204);
+		float m = map(50, 0, width, 0, height);
+		for (int i = 0; i < resistors.size(); i++) {
+			rect(100, 100 + (m*i), 150, 50);
+		}
 	}
 
 	public void loadColors(){
