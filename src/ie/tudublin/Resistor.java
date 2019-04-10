@@ -28,6 +28,18 @@ public class Resistor{
         this.ones = o;
     }
 
+    public int getHundreds(){
+        return hundreds;
+    }
+
+    public int getTens(){
+        return tens;
+    }
+
+    public int getOnes(){
+        return ones;
+    }
+
     @Override
     public String toString() {
         return(hundreds + " " + tens + " " + ones);

@@ -32,9 +32,10 @@ public class UI extends PApplet{
 			fill(250);
 			rect(100, 100 + (m*i), 150, 50);
 			
+			//Draw lines
 			for (int j = 0; j < 3; j++) {
-				fill(color(findColour(i).getR(), findColour(i).getG(), findColour(i).getB()));
-				rect(100 + (10*j), 100+(m*i), 5, 50);
+				fill(color(findColour(j).getR(), findColour(i).getG(), findColour(i).getB()));
+				rect(100 + 10 + (10*j), 100+(m*i), 5, 50);
 			}
 		}
 	}
